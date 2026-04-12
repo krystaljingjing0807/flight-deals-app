@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>航旅智省 | 智能搜索</title><link rel="stylesheet" href="styles.css" /></head>
+<body>
+<header class="topbar"><div class="container nav-wrap"><div class="logo-glow">航旅智省</div><nav><a href="index.html">首页</a><a class="active" href="search.html">智能搜索</a><a href="deal-detail.html">特价详情</a><a href="subscribe.html">订阅提醒</a><a href="profile.html">个人中心</a></nav><button class="ghost-btn">保存偏好</button></div></header>
+<main class="container">
+  <section class="hero mini-hero">
+    <h1 class="hero-title small">智能搜索中心</h1>
+    <p class="muted">切换不同搜索模式，立即看到不同类型结果。</p>
+    <div class="tab-buttons" data-tabs="search-tabs">
+      <button class="tab-btn active" data-target="tab-precise">明确搜索</button>
+      <button class="tab-btn" data-target="tab-flex">灵活搜索</button>
+      <button class="tab-btn" data-target="tab-nlp">自然语言</button>
+    </div>
+  </section>
+
+  <section id="search-tabs">
+    <article class="panel tab-panel active" id="tab-precise">
+      <h2>明确搜索（刚需用户）</h2>
+      <div class="grid-2">
+        <form class="form">
+          <label>出发地<input value="北京" /></label><label>目的地<input value="东京" /></label>
+          <label>日期<input value="2026-06-18 至 2026-06-22" /></label><label>乘客类型<select><option>成人1 儿童0</option></select></label>
+          <label>行李需求<select><option>1件托运 + 1件随身</option></select></label><button type="button">查同航线最优解</button>
+        </form>
+        <div class="card"><h3>结果呈现</h3><ul class="list"><li>同航线精确比价</li><li>总成本排序</li><li>退改与中转风险并排比较</li></ul></div>
+      </div>
+    </article>
+
+    <article class="panel tab-panel" id="tab-flex">
+      <h2>灵活搜索（旅游型用户）</h2>
+      <div class="grid-2">
+        <form class="form">
+          <label>出发地<input value="上海" /></label><label>时间范围<input value="未来45天" /></label>
+          <label>预算<input value="3000元" /></label><label>偏好<select><option>海岛 / 免签 / 直飞 / 短途</option></select></label>
+          <button type="button">生成最划算目的地</button>
+        </form>
+        <div class="card"><h3>结果呈现</h3><ul class="list"><li>最划算目的地 TOP 排名</li><li>最佳出发日期组合</li><li>预算内可达一键对比</li></ul></div>
+      </div>
+    </article>
+
+    <article class="panel tab-panel" id="tab-nlp">
+      <h2>自然语言搜索（低门槛输入）</h2>
+      <div class="grid-2">
+        <form class="form">
+          <label>直接输入你的需求<textarea>下个月找一个 4 天 3 晚适合情侣的便宜目的地，预算 3000 以内。</textarea></label>
+          <button type="button">解析并生成方案</button>
+        </form>
+        <div class="card"><h3>结果呈现</h3><ul class="list"><li>自动提取出发地/预算/时长等条件</li><li>给出可执行目的地与日期建议</li><li>附带“现在买还是等等”的结论</li></ul></div>
+      </div>
+    </article>
+  </section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
