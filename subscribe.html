@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>订阅提醒 · 航旅智省</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="topbar">
+  <div class="container nav-wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">智</span>
+      <span class="brand-word"><span class="brand-cn">航旅智省</span><span class="brand-en">SMART · TRAVEL · INTEL</span></span>
+    </a>
+    <nav class="primary">
+      <a href="index.html">首页</a>
+      <a href="search.html">智能搜索</a>
+      <a href="deal-detail.html">特价详情</a>
+      <a class="active" href="subscribe.html">订阅提醒</a>
+      <a href="profile.html">个人中心</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="btn btn-ghost btn-sm" data-toast="已打开提醒模板预览。">查看模板</button>
+      <button class="btn btn-primary btn-sm" data-toast="从下方三步创建你的订阅。">新建订阅</button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="panel mini-hero" data-reveal>
+    <div>
+      <div class="eyebrow">SECTION · 04 — ALERTS</div>
+      <h1>提醒不只说“降价了”，<br/><em>而是告诉你能不能买</em>。</h1>
+    </div>
+    <div class="mini-hero-side">
+      <span>ALERT TYPES</span><b>4 类订阅</b><span>REFRESH</span><b>90 秒/次</b><span>OUTPUT</span><b>可直接决策</b>
+    </div>
+  </section>
+
+  <section class="grid-4" data-reveal>
+    <div class="sub-card" data-toast="已选择航线订阅"><span class="num">01</span><h3>航线订阅</h3><p>北京 ⇌ 东京，未来 2 个月低于 ¥1800 即提醒。</p><div class="btn-row"><span class="chip chip-ok">精确航线</span></div></div>
+    <div class="sub-card" data-toast="已选择目的地订阅"><span class="num">02</span><h3>目的地订阅</h3><p>上海出发去欧洲任意地，五一后最低价提醒。</p><div class="btn-row"><span class="chip">灵活目的地</span></div></div>
+    <div class="sub-card" data-toast="已选择活动订阅"><span class="num">03</span><h3>活动订阅</h3><p>航司会员日 / 618 / 黑五 / 里程兑换窗口。</p><div class="btn-row"><span class="chip chip-warn">促销日历</span></div></div>
+    <div class="sub-card" data-toast="已选择机会订阅"><span class="num">04</span><h3>机会订阅</h3><p>周末捡漏 / 亲子寒假 / 商务舱误杀等场景。</p><div class="btn-row"><span class="chip chip-ember">机会流</span></div></div>
+  </section>
+
+  <section class="grid-2" data-reveal>
+    <article class="panel">
+      <div class="section-title"><span class="num">01 / CREATE</span><h2>三步创建订阅</h2></div>
+      <div class="wizard" id="sub-wizard">
+        <div class="wizard-steps">
+          <div class="wizard-step active"><span class="num">1</span>条件</div><div class="wizard-divider"></div>
+          <div class="wizard-step"><span class="num">2</span>阈值</div><div class="wizard-divider"></div>
+          <div class="wizard-step"><span class="num">3</span>渠道</div>
+        </div>
+        <div data-step>
+          <form class="form" onsubmit="event.preventDefault();">
+            <div class="form-row"><label class="field">出发地<input value="上海 · PVG/SHA" /></label><label class="field">目的地<input value="东京 · NRT/HND" /></label></div>
+            <div class="form-row"><label class="field">时间窗口<input value="未来 60 天" /></label><label class="field">人群场景<select><option>周末短途</option><option>亲子假期</option><option>出差刚需</option></select></label></div>
+            <button type="button" class="btn btn-primary" data-next>下一步：设置阈值 →</button>
+          </form>
+        </div>
+        <div data-step>
+          <form class="form" onsubmit="event.preventDefault();">
+            <label class="field">触发条件<select><option>低于 ¥1800 或降幅超过 20%</option><option>进入近 30 天最低 10%</option><option>含托运总价低于 ¥2200</option></select></label>
+            <div class="form-row"><label class="field">中转上限<input value="≤ 3 小时" /></label><label class="field">行李偏好<input value="至少 1 件托运" /></label></div>
+            <div class="flex"><button type="button" class="btn btn-ghost" data-prev>← 上一步</button><button type="button" class="btn btn-primary" data-next>下一步：选择渠道 →</button></div>
+          </form>
+        </div>
+        <div data-step>
+          <form class="form" onsubmit="event.preventDefault();">
+            <label class="field">推送渠道<select><option>App 推送 + 邮件</option><option>仅 App 推送</option><option>邮件每日摘要</option></select></label>
+            <label class="field">提醒频率<select><option>只推真特价</option><option>所有降价都推送</option><option>每日最多 1 次</option></select></label>
+            <div class="flex"><button type="button" class="btn btn-ghost" data-prev>← 上一步</button><button type="button" class="btn btn-ember" data-next>完成订阅</button></div>
+          </form>
+        </div>
+      </div>
+    </article>
+
+    <article class="panel">
+      <div class="section-title"><span class="num">02 / PREVIEW</span><h2>提醒内容模板</h2><span class="spacer"></span><button class="btn btn-ghost btn-sm" id="preview-alert">刷新预览</button></div>
+      <div id="alert-preview-wrap">
+        <div class="alert-preview">
+          <div class="alert-head"><div class="logo">智</div><div class="meta"><b>航旅智省 · 价格提醒</b><time>2 分钟前</time></div></div>
+          <div class="alert-body">
+            <div class="tagrow"><span class="chip chip-ok">真特价</span><span class="chip chip-ember">建议现在买</span></div>
+            <div class="headline">上海 ⇌ 东京降至 ¥1999，较昨日再降 ¥220</div>
+            <p class="reason">会员日叠券 + 非热门返程形成短时低价；不含托运，轻装用户更适合。</p>
+            <div class="pricerow"><span class="now">¥1999</span><span class="was">¥2820</span></div>
+          </div>
+          <div class="alert-actions"><button class="btn btn-ghost btn-sm" data-toast="已加入对比。">对比</button><button class="btn btn-primary btn-sm" data-toast="已打开详情页。" onclick="location.href='deal-detail.html'">查看详情</button></div>
+        </div>
+      </div>
+    </article>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="container">
+    <div>© 2026 航旅智省 · SMART TRAVEL INTEL</div>
+    <div><a href="#">关于</a><a href="#">数据来源</a><a href="#">隐私</a><a href="#">联系</a></div>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

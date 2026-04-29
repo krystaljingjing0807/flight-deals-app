@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>航旅智省 · 真特价识别引擎</title>
+  <meta name="description" content="从全网分散低价中，帮你发现真正值得买的那一张。" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+</head>
+<body>
+
+<!-- ============== HEADER ============== -->
+<header class="topbar">
+  <div class="container nav-wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">智</span>
+      <span class="brand-word">
+        <span class="brand-cn">航旅智省</span>
+        <span class="brand-en">SMART · TRAVEL · INTEL</span>
+      </span>
+    </a>
+    <nav class="primary">
+      <a class="active" href="index.html">首页</a>
+      <a href="search.html">智能搜索</a>
+      <a href="deal-detail.html">特价详情</a>
+      <a href="subscribe.html">订阅提醒</a>
+      <a href="profile.html">个人中心</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="btn btn-ghost btn-sm" data-toast="登录功能正在 demo 阶段。">登录</button>
+      <button class="btn btn-primary btn-sm" data-toast="开始你的省钱之旅 ✈">开始使用</button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- ============== HERO ============== -->
+  <section class="hero-home" data-reveal>
+    <div class="hero-grid">
+      <div class="hero-left">
+        <div class="hero-meta">
+          <span>VOL · <b>04</b> / 2026</span>
+          <span>真特价识别 · <b>v2.4</b></span>
+          <span>覆盖航司 <b>38</b></span>
+        </div>
+        <h1 class="hero-headline">
+          从全网低价中，<br/>
+          帮你识别<em>真正值得买</em>的<br/>
+          <span class="underlined">那一张机票</span>。
+        </h1>
+        <div class="hero-actions">
+          <button class="btn btn-primary btn-lg" onclick="location.href='search.html'">10 秒找特价 →</button>
+          <button class="btn btn-ghost btn-lg" onclick="location.href='deal-detail.html'">看一个真实案例</button>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="live-tag"><span class="live-dot"></span>正在监测全网价格</div>
+        <div class="hero-rotator" data-rotator>
+          <span class="price">上海 → 东京</span><br/>
+          <span style="font-size:18px; font-style:normal; color:#fde4d3;">"¥1999 · 较30天均价低 29% · 含税"</span>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="v"><span data-count="124">0</span><small>个</small></div>
+            <div class="l">今日真特价</div>
+          </div>
+          <div class="hero-stat">
+            <div class="v">¥<span data-count="670" data-fmt="comma">0</span></div>
+            <div class="l">人均节省</div>
+          </div>
+          <div class="hero-stat">
+            <div class="v"><span data-count="38">0</span></div>
+            <div class="l">覆盖航司</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== STAT BAR ============== -->
+  <section class="stat-bar" data-reveal>
+    <div class="stat-cell">
+      <div class="l">已为用户累计节省</div>
+      <div class="v">¥<span data-count="2347650" data-fmt="comma">0</span></div>
+      <div class="delta">↑ 较上月 +18.4%</div>
+    </div>
+    <div class="stat-cell">
+      <div class="l">监测航线</div>
+      <div class="v"><span data-count="3820" data-fmt="comma">0</span><small>条</small></div>
+      <div class="delta">每 90 秒刷新一次</div>
+    </div>
+    <div class="stat-cell">
+      <div class="l">特价命中率</div>
+      <div class="v"><span data-count="89.2">0</span><small>%</small></div>
+      <div class="delta">真伪识别准确率</div>
+    </div>
+    <div class="stat-cell">
+      <div class="l">最近一次推送</div>
+      <div class="v" style="font-size:22px;line-height:1.2;">2 分钟前</div>
+      <div class="delta">北京-东京 · 降 ¥170</div>
+    </div>
+  </section>
+
+  <!-- ============== DEAL RADAR + OPPORTUNITY ============== -->
+  <section class="grid-2" data-reveal>
+    <article class="panel">
+      <div class="section-title">
+        <span class="num">01 / RADAR</span>
+        <h2>特价雷达 · 实时</h2>
+        <span class="spacer"></span>
+        <span class="chip chip-ember">4 个真特价</span>
+      </div>
+      <div class="feed">
+        <div class="feed-item hot deal-selectable" data-deal-card data-save-title="上海 ⇌ 东京" tabindex="0">
+          <div class="feed-rank">01</div>
+          <div class="feed-body">
+            <strong>上海 ⇌ 东京 · 往返直降 28%</strong>
+            <p>低于近 30 天区间，且压过同日期同航线 ¥320。</p>
+            <div class="deal-inline-actions" hidden>
+              <button class="btn btn-primary btn-sm" data-buy-deal>现在买</button>
+              <button class="btn btn-ghost btn-sm" data-save-deal>先收藏</button>
+            </div>
+          </div>
+          <div class="feed-meta">
+            <span class="feed-price">¥1999</span>
+            <span class="chip chip-ok">真特价</span>
+          </div>
+        </div>
+        <div class="feed-item deal-selectable" data-deal-card data-save-title="北京出发 Top 20 目的地" tabindex="0">
+          <div class="feed-rank">02</div>
+          <div class="feed-body">
+            <strong>北京 · 未来 30 天含税 Top 20 目的地</strong>
+            <p>已剔除托运陷阱与高风险中转。</p>
+            <div class="deal-inline-actions" hidden>
+              <button class="btn btn-primary btn-sm" data-buy-deal>现在买</button>
+              <button class="btn btn-ghost btn-sm" data-save-deal>先收藏</button>
+            </div>
+          </div>
+          <div class="feed-meta">
+            <span class="feed-price neutral">¥980 起</span>
+            <span class="chip">常规低价</span>
+          </div>
+        </div>
+        <div class="feed-item deal-selectable" data-deal-card data-save-title="超低裸票观察项" tabindex="0">
+          <div class="feed-rank">03</div>
+          <div class="feed-body">
+            <strong>超低裸票 · 不含托运</strong>
+            <p>票面 ¥499，加托运后总成本 ¥1280。</p>
+            <div class="deal-inline-actions" hidden>
+              <button class="btn btn-primary btn-sm" data-buy-deal>现在买</button>
+              <button class="btn btn-ghost btn-sm" data-save-deal>先收藏</button>
+            </div>
+          </div>
+          <div class="feed-meta">
+            <span class="feed-price neutral">¥499</span>
+            <span class="chip chip-danger">伪低价</span>
+          </div>
+        </div>
+        <div class="feed-item deal-selectable" data-deal-card data-save-title="联程中转 65 分钟" tabindex="0">
+          <div class="feed-rank">04</div>
+          <div class="feed-body">
+            <strong>联程中转仅 65 分钟 · 自取行李</strong>
+            <p>需自行提取行李重新值机。</p>
+            <div class="deal-inline-actions" hidden>
+              <button class="btn btn-primary btn-sm" data-buy-deal>现在买</button>
+              <button class="btn btn-ghost btn-sm" data-save-deal>先收藏</button>
+            </div>
+          </div>
+          <div class="feed-meta">
+            <span class="feed-price neutral">¥1180</span>
+            <span class="chip chip-warn">高风险低价</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="panel">
+      <div class="section-title">
+        <span class="num">02 / OPPORTUNITIES</span>
+        <h2>机会流精选</h2>
+      </div>
+      <div class="opp-grid">
+        <div class="opp-card" data-toast="已收藏：杭州→首尔">
+          <div class="title-row"><h3>周末捡漏</h3><span class="price-tag">¥1299</span></div>
+          <p class="desc">杭州 → 首尔，3 天 2 晚，下周五出发。</p>
+          <div class="meta-row"><span>直飞</span><span>免签</span><span>红眼</span></div>
+        </div>
+        <div class="opp-card" data-toast="已收藏：五一错峰">
+          <div class="title-row"><h3>错峰价</h3><span class="price-tag">−22%</span></div>
+          <p class="desc">五一后第一周国际线均价回落，国内线回落 18%。</p>
+          <div class="meta-row"><span>5 月 6 日起</span><span>多目的地</span></div>
+        </div>
+        <div class="opp-card" data-toast="已收藏：航司活动日历">
+          <div class="title-row"><h3>会员日</h3><span class="price-tag">即将开放</span></div>
+          <p class="desc">南航 / 国泰 / 新航 / 阿航 大促窗口已纳入跟踪。</p>
+          <div class="meta-row"><span>每月 28 日</span><span>提前提醒</span></div>
+        </div>
+        <div class="opp-card" data-toast="已收藏：北京-东京">
+          <div class="title-row"><h3>已收藏航线</h3><span class="price-tag">−¥170</span></div>
+          <p class="desc">北京 → 东京 2 小时前继续下探，建议设置提醒。</p>
+          <div class="meta-row"><span>2 小时前</span><span>1 次降价</span></div>
+        </div>
+        <div class="opp-card" data-toast="已收藏：商务舱误杀">
+          <div class="title-row"><h3>商务舱误杀</h3><span class="price-tag">¥3980</span></div>
+          <p class="desc">国泰商务舱标错价，限时窗口约 4 小时。</p>
+          <div class="meta-row"><span>商务舱</span><span>全网最低</span><span>限时</span></div>
+        </div>
+        <div class="opp-card" data-toast="已查看你的偏好">
+          <div class="title-row"><h3>为你定制</h3><span class="price-tag">3 个匹配</span></div>
+          <p class="desc">基于你"直飞 + 含托运 + 短途"偏好筛选。</p>
+          <div class="meta-row"><span>匹配偏好</span><span>个人化</span></div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============== WORLD MAP ============== -->
+  <section class="panel budget-map-panel" data-reveal>
+    <div class="section-title">
+      <span class="num">03 / BUDGET MAP</span>
+      <h2>预算地图</h2>
+      <span class="spacer"></span>
+      <span class="chip">¥2000 内 · 未来 30 天</span>
+    </div>
+    <div class="map-origin-bar">
+      <label class="field">出发地<input id="map-origin" value="上海 · SHA/PVG" /></label>
+      <label class="field">预算上限<select id="map-budget"><option value="2000">¥2000 内</option><option value="3000">¥3000 内</option><option value="5000">¥5000 内</option></select></label>
+      <button class="btn btn-primary" type="button" id="map-refresh">刷新预算地图</button>
+    </div>
+    <div class="map-stage">
+      <div class="world-map-wrap" id="world-map"></div>
+
+      <div class="map-toolbar">
+        <span class="tiny" style="margin-right:6px;">区域筛选 ·</span>
+        <button class="filter-pill active" data-region-filter="all">全部</button>
+        <button class="filter-pill" data-region-filter="asia">亚洲</button>
+        <button class="filter-pill" data-region-filter="eu">欧洲</button>
+        <button class="filter-pill" data-region-filter="us">北美</button>
+        <button class="filter-pill" data-region-filter="mideast">中东</button>
+        <button class="filter-pill" data-region-filter="oceania">大洋洲</button>
+        <span class="spacer"></span>
+        <span class="tiny">点击 pin 查看详情 →</span>
+      </div>
+
+      <div class="map-detail" id="map-detail">
+        <!-- populated by JS -->
+      </div>
+    </div>
+  </section>
+
+
+</main>
+
+<footer class="foot">
+  <div class="container">
+    <div>© 2026 航旅智省 · SMART TRAVEL INTEL</div>
+    <div>
+      <a href="#">关于</a><a href="#">数据来源</a><a href="#">隐私</a><a href="#">联系</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script src="script.js"></script>
+</body>
+</html>

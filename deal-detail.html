@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>特价详情 · 航旅智省</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="topbar">
+  <div class="container nav-wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">智</span>
+      <span class="brand-word"><span class="brand-cn">航旅智省</span><span class="brand-en">SMART · TRAVEL · INTEL</span></span>
+    </a>
+    <nav class="primary">
+      <a href="index.html">首页</a>
+      <a href="search.html">智能搜索</a>
+      <a class="active" href="deal-detail.html">特价详情</a>
+      <a href="subscribe.html">订阅提醒</a>
+      <a href="profile.html">个人中心</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="btn btn-ghost btn-sm" data-toast="已加入对比清单。">加入对比</button>
+      <button class="btn btn-primary btn-sm" data-toast="已为上海⇌东京设置价格提醒。">设置提醒</button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="deal-hero" data-reveal>
+    <div>
+      <div class="eyebrow">CASE STUDY · REAL DEAL</div>
+      <div class="route-display">
+        <div class="route-airport">SHA<span class="name">上海 · Shanghai</span></div>
+        <div class="route-line"></div>
+        <div class="route-airport">TYO<span class="name">东京 · Tokyo</span></div>
+      </div>
+      <div class="countdown" id="countdown"><span class="live-dot"></span> 预计有效 <b>--h --m --s</b></div>
+    </div>
+    <div class="summary" style="grid-template-columns:1fr; gap:14px;">
+      <div class="verdict"><small>BUY SIGNAL</small>建议现在买</div>
+      <p class="reason">当前到手价比近 30 天常见价低约 29%，含税后仍压过同日期同航线。价格低，但退改不友好且中转风险高，适合轻装且行程确定的用户。</p>
+      <div class="price-big">¥1999<small>含税起</small></div>
+    </div>
+  </section>
+
+  <section class="panel" data-reveal>
+    <div class="section-title"><span class="num">01 / PRICE CURVE</span><h2>近 30 天价格区间</h2><span class="spacer"></span><span class="chip chip-ember">低点区间</span></div>
+    <div class="chart-wrap">
+      <div class="chart-header">
+        <h3>价格走势 · 当前点位</h3>
+        <div class="chart-legend"><span><i></i>走势</span><span class="dot-low"><i></i>低点</span><span class="dot-high"><i></i>高点</span><span class="dot-current"><i></i>现价</span></div>
+      </div>
+      <svg id="price-chart" class="chart-svg" viewBox="0 0 720 220" preserveAspectRatio="none"></svg>
+      <div class="chart-summary-grid">
+        <div class="item"><div class="l">当前价</div><div class="v ember">¥1999</div></div>
+        <div class="item"><div class="l">30天均价</div><div class="v">¥2820</div></div>
+        <div class="item"><div class="l">降幅</div><div class="v emerald">−29%</div></div>
+        <div class="item"><div class="l">数据源</div><div class="v">3 个</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid-2" data-reveal>
+    <article class="panel">
+      <div class="section-title"><span class="num">02 / FULL COST</span><h2>到手价构成</h2></div>
+      <table class="table">
+        <tr><th>项目</th><th class="num">金额</th></tr>
+        <tr><td>票面价</td><td class="num">¥1480</td></tr>
+        <tr><td>税费</td><td class="num">¥320</td></tr>
+        <tr><td>行李费</td><td class="num">¥120</td></tr>
+        <tr><td>选座费（可选）</td><td class="num">¥80</td></tr>
+        <tr class="total"><td>支付优惠后</td><td class="num">¥1999</td></tr>
+      </table>
+      <div class="summary mt-20" style="grid-template-columns:1fr;">
+        <div class="verdict" style="font-size:20px;"><small>FULL COST TIP</small>全成本比裸票更重要</div>
+        <p class="reason">A 航司 ¥999 不含托运，补齐行李后反超 B 航司；默认带箱子时，含 20kg 的方案更划算。</p>
+      </div>
+    </article>
+
+    <article class="panel">
+      <div class="section-title"><span class="num">03 / RULE TRANSLATOR</span><h2>规则翻译器</h2></div>
+      <div class="grid-2">
+        <div class="sub-card"><span class="num">01</span><h3>取消</h3><p>不可免费取消；下单后退票损失较高。</p></div>
+        <div class="sub-card"><span class="num">02</span><h3>改签</h3><p>起飞前可改，但手续费高，适合行程确定的人。</p></div>
+        <div class="sub-card"><span class="num">03</span><h3>行李</h3><p>托运不含；随身 1 件，超额需另购。</p></div>
+        <div class="sub-card"><span class="num">04</span><h3>中转</h3><p>需自行提取行李再值机，建议预留更宽松时间。</p></div>
+      </div>
+    </article>
+  </section>
+
+  <section class="grid-2" data-reveal>
+    <article class="panel">
+      <div class="section-title"><span class="num">04 / WHY CHEAP</span><h2>为什么它便宜</h2></div>
+      <div class="feed">
+        <div class="feed-item hot"><div class="feed-rank">01</div><div class="feed-body"><strong>航司限时促销 + OTA 券后叠加</strong><p>双重折扣叠加形成短时低价窗口。</p></div><div class="feed-meta"><span class="chip chip-ok">可信</span></div></div>
+        <div class="feed-item"><div class="feed-rank">02</div><div class="feed-body"><strong>冷门时段低谷</strong><p>出发与返程都避开热门时段，价格被进一步压低。</p></div><div class="feed-meta"><span class="chip">常见</span></div></div>
+        <div class="feed-item"><div class="feed-rank">03</div><div class="feed-body"><strong>邻近机场组合</strong><p>到达机场不是最热门枢纽，需要额外计算地面交通成本。</p></div><div class="feed-meta"><span class="chip chip-warn">需评估</span></div></div>
+      </div>
+    </article>
+
+    <article class="panel">
+      <div class="section-title"><span class="num">05 / ALTERNATIVES</span><h2>替代方案与时效</h2></div>
+      <div style="border:1px solid var(--line); border-radius:var(--r-md); padding:0 18px; background:var(--paper-2);">
+        <div class="flight-result"><div class="flight-airline"><b>直飞舒适版</b>+¥200</div><div class="flight-times"><div class="time">PVG<small>上海</small></div><div class="duration"><span>直飞</span><span class="line"></span><span>含托运</span></div><div class="time">NRT<small>东京</small></div></div><div class="flight-price">¥2199<small>风险最低</small></div></div>
+        <div class="flight-result"><div class="flight-airline"><b>红眼省钱版</b>−¥150</div><div class="flight-times"><div class="time">SHA<small>上海</small></div><div class="duration"><span>红眼</span><span class="line"></span><span>另购行李</span></div><div class="time">HND<small>东京</small></div></div><div class="flight-price">¥1849<small>舒适度低</small></div></div>
+        <div class="flight-result"><div class="flight-airline"><b>前后一天</b>同价</div><div class="flight-times"><div class="time">+1D<small>出发</small></div><div class="duration"><span>中转</span><span class="line"></span><span>带托运</span></div><div class="time">TYO<small>东京</small></div></div><div class="flight-price">¥1990<small>更稳</small></div></div>
+      </div>
+      <div class="divider"></div>
+      <p class="muted">抓取时间 10:40｜最近变化：2 小时前降 ¥170｜预计有效 18 小时｜多源校验通过</p>
+      <div class="flex mt-16"><button class="btn btn-primary" data-toast="已跳转至购买页。">立即下单</button><button class="btn btn-ghost" data-toast="已保存到对比清单。">加入对比</button></div>
+    </article>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="container">
+    <div>© 2026 航旅智省 · SMART TRAVEL INTEL</div>
+    <div><a href="#">关于</a><a href="#">数据来源</a><a href="#">隐私</a><a href="#">联系</a></div>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

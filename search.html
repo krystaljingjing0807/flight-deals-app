@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>智能搜索 · 航旅智省</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container nav-wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">智</span>
+      <span class="brand-word">
+        <span class="brand-cn">航旅智省</span>
+        <span class="brand-en">SMART · TRAVEL · INTEL</span>
+      </span>
+    </a>
+    <nav class="primary">
+      <a href="index.html">首页</a>
+      <a class="active" href="search.html">智能搜索</a>
+      <a href="deal-detail.html">特价详情</a>
+      <a href="subscribe.html">订阅提醒</a>
+      <a href="profile.html">个人中心</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="btn btn-ghost btn-sm" data-toast="偏好已保存到本地。">保存偏好</button>
+      <button class="btn btn-primary btn-sm" data-toast="已重置默认偏好。">重置</button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="panel mini-hero" data-reveal>
+    <div>
+      <div class="eyebrow">SECTION · 02 — SEARCH</div>
+      <h1>三种方式找特价 ——<br/><em style="font-family:var(--serif); font-style:italic;">看你今天想怎么“省”</em>。</h1>
+    </div>
+    <div class="mini-hero-side">
+      <span>SEARCH MODES</span>
+      <b>3 种入口</b>
+      <span>UPDATED</span>
+      <b>实时全网价</b>
+      <span>RESULT</span>
+      <b>搜索后生成</b>
+    </div>
+  </section>
+
+  <section class="panel search-stage" data-reveal>
+    <div class="tab-buttons search-mode-switch" data-tabs="search-tabs">
+      <button class="tab-btn active" data-target="tab-precise"><span class="tab-num">01</span>明确搜索</button>
+      <button class="tab-btn" data-target="tab-flex"><span class="tab-num">02</span>灵活搜索</button>
+      <button class="tab-btn" data-target="tab-nlp"><span class="tab-num">03</span>自然语言</button>
+    </div>
+
+    <div id="search-tabs">
+      <div class="tab-panel active" id="tab-precise">
+        <div class="search-input-view">
+          <div class="eyebrow">输入条件</div>
+          <h2>明确搜索 · 刚需用户</h2>
+          <form class="form mt-16" onsubmit="event.preventDefault();">
+            <div class="form-row">
+              <label class="field">出发地<input value="北京 · PEK" /></label>
+              <label class="field">目的地<input value="东京 · NRT" /></label>
+            </div>
+            <div class="form-row">
+              <label class="field">出发日期<input value="2026-06-18" /></label>
+              <label class="field">返程日期<input value="2026-06-22" /></label>
+            </div>
+            <div class="form-row">
+              <label class="field">乘客<select><option>成人 1 · 儿童 0</option><option>成人 2 · 儿童 0</option><option>成人 2 · 儿童 1</option></select></label>
+              <label class="field">行李<select><option>1 件托运 + 1 件随身</option><option>仅随身</option><option>2 件托运</option></select></label>
+            </div>
+            <button type="button" class="btn btn-primary btn-lg" data-search-submit>查同航线最优解 →</button>
+          </form>
+        </div>
+
+        <div class="search-result-view" hidden>
+          <div class="row">
+            <div>
+              <div class="eyebrow">实时结果</div>
+              <h2>3 个候选 · 已按全成本排序</h2>
+            </div>
+            <button class="btn btn-ghost btn-sm" data-back-input>返回修改条件</button>
+          </div>
+          <div class="result-box mt-16">
+            <div class="flight-result">
+              <div class="flight-airline"><b>CA · 国航</b>CA181</div>
+              <div class="flight-times"><div class="time">08:30 <small>PEK</small></div><div class="duration"><span>3 小时 25 分</span><span class="line"></span><span>直飞</span></div><div class="time">13:55 <small>NRT</small></div></div>
+              <div class="flight-price">¥1999 <small>含税 · 含 23kg</small></div>
+            </div>
+            <div class="flight-result">
+              <div class="flight-airline"><b>NH · 全日空</b>NH962</div>
+              <div class="flight-times"><div class="time">14:10 <small>PEK</small></div><div class="duration"><span>3 小时 30 分</span><span class="line"></span><span>直飞</span></div><div class="time">19:40 <small>NRT</small></div></div>
+              <div class="flight-price">¥2180 <small>含税 · 改签灵活</small></div>
+            </div>
+            <div class="flight-result">
+              <div class="flight-airline"><b>MU · 东航</b>MU523</div>
+              <div class="flight-times"><div class="time">23:45 <small>PEK</small></div><div class="duration"><span>3 小时 15 分</span><span class="line"></span><span>红眼</span></div><div class="time">04:00 <small>+1 NRT</small></div></div>
+              <div class="flight-price">¥1680 <small>含税 · 自购托运</small></div>
+            </div>
+          </div>
+          <div class="summary mt-16" style="grid-template-columns: 1fr auto;">
+            <div><div class="verdict" style="font-size:20px;"><small>SUMMARY</small>建议选 ① 国航 ¥1999</div></div>
+            <button class="btn btn-ember btn-lg" data-toast="已为你打开购买窗口 ✈">立即下单</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="tab-flex">
+        <div class="search-input-view">
+          <div class="eyebrow">告诉我大致条件</div>
+          <h2>灵活搜索 · 旅游型用户</h2>
+          <form class="form mt-16" onsubmit="event.preventDefault();">
+            <label class="field">出发地<input value="上海 · PVG" /></label>
+            <div class="form-row">
+              <label class="field">时间窗口<input value="未来 45 天内" /></label>
+              <label class="field">总预算<input value="¥3000" /></label>
+            </div>
+            <label class="field">偏好<select>
+              <option>海岛 / 免签 / 直飞 / 短途</option>
+              <option>城市游 / 文化 / 美食</option>
+              <option>滑雪 / 冬季 / 温泉</option>
+              <option>周末快闪 / 3-4 天</option>
+            </select></label>
+            <button type="button" class="btn btn-primary btn-lg" data-search-submit>生成最划算目的地 →</button>
+          </form>
+        </div>
+
+        <div class="search-result-view" hidden>
+          <div class="row">
+            <div>
+              <div class="eyebrow">推荐目的地 · TOP 6</div>
+              <h2>¥3000 内 · 已按决策优先级排序</h2>
+            </div>
+            <button class="btn btn-ghost btn-sm" data-back-input>返回修改条件</button>
+          </div>
+          <div class="nlp-result-grid mt-16">
+            <div class="nlp-result-card"><div class="city">岘港 <small>DA NANG</small></div><div class="price-tag">¥1580 起</div><div class="meta"><span>4天3晚</span><span>直飞</span><span>免签</span></div><div class="verdict">“低于近30天均价 18%。可下单。”</div></div>
+            <div class="nlp-result-card"><div class="city">济州岛 <small>JEJU</small></div><div class="price-tag">¥1190 起</div><div class="meta"><span>3天2晚</span><span>直飞</span><span>落地签</span></div><div class="verdict">“周末出发，最便宜组合。”</div></div>
+            <div class="nlp-result-card"><div class="city">清迈 <small>CHIANG MAI</small></div><div class="price-tag">¥1880 起</div><div class="meta"><span>5天4晚</span><span>中转</span><span>免签</span></div><div class="verdict">“现在买。低于均价 22%。”</div></div>
+            <div class="nlp-result-card"><div class="city">普吉 <small>PHUKET</small></div><div class="price-tag">¥1990 起</div><div class="meta"><span>6天5晚</span><span>中转</span><span>免签</span></div><div class="verdict">“含 20kg，全成本最优。”</div></div>
+            <div class="nlp-result-card"><div class="city">巴厘岛 <small>BALI</small></div><div class="price-tag">¥2680 起</div><div class="meta"><span>5天4晚</span><span>中转</span><span>免签</span></div><div class="verdict">“价格稳定，可下单。”</div></div>
+            <div class="nlp-result-card"><div class="city">长滩岛 <small>BORACAY</small></div><div class="price-tag">¥2390 起</div><div class="meta"><span>5天4晚</span><span>中转</span><span>电子签</span></div><div class="verdict">“价格在低点，但要订早班。”</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="tab-nlp">
+        <div class="search-input-view">
+          <div class="eyebrow">说人话就行</div>
+          <h2>自然语言搜索 · 低门槛</h2>
+          <div class="nlp-demo mt-16" id="nlp-form">
+            <label class="field" style="margin-bottom:8px;">直接输入你的需求</label>
+            <textarea>下个月找一个 4 天 3 晚适合情侣的便宜目的地，从上海出发，预算 3000 以内，最好直飞免签。</textarea>
+            <div style="display:flex; gap:10px; margin-top:12px; flex-wrap: wrap;">
+              <button type="button" class="btn btn-primary" data-search-submit>解析并生成方案 →</button>
+              <button type="button" class="btn btn-ghost btn-sm" onclick="document.querySelector('#nlp-form textarea').value='周末想从北京去日本玩 3 天，越便宜越好';">示例 1</button>
+              <button type="button" class="btn btn-ghost btn-sm" onclick="document.querySelector('#nlp-form textarea').value='春节想带爸妈去东南亚，10 天行程，预算 8000';">示例 2</button>
+              <button type="button" class="btn btn-ghost btn-sm" onclick="document.querySelector('#nlp-form textarea').value='下周一个人想出去散散心，3000 块以内能去哪';">示例 3</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="search-result-view" hidden>
+          <div class="row">
+            <div>
+              <div class="eyebrow">生成结果</div>
+              <h2>自然语言搜索结果</h2>
+            </div>
+            <button class="btn btn-ghost btn-sm" data-back-input>返回修改条件</button>
+          </div>
+          <div class="nlp-output mt-16" id="nlp-output">
+            <span class="muted">结果生成中…</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="container">
+    <div>© 2026 航旅智省 · SMART TRAVEL INTEL</div>
+    <div>
+      <a href="#">关于</a><a href="#">数据来源</a><a href="#">隐私</a><a href="#">联系</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

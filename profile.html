@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>个人中心 · 航旅智省</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="topbar">
+  <div class="container nav-wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">智</span>
+      <span class="brand-word"><span class="brand-cn">航旅智省</span><span class="brand-en">SMART · TRAVEL · INTEL</span></span>
+    </a>
+    <nav class="primary">
+      <a href="index.html">首页</a>
+      <a href="search.html">智能搜索</a>
+      <a href="deal-detail.html">特价详情</a>
+      <a href="subscribe.html">订阅提醒</a>
+      <a class="active" href="profile.html">个人中心</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="btn btn-ghost btn-sm" data-toast="编辑资料功能正在 demo 阶段。">编辑资料</button>
+      <button class="btn btn-primary btn-sm" data-toast="偏好已同步。">同步偏好</button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="panel mini-hero" data-reveal>
+    <div>
+      <div class="eyebrow">SECTION · 05 — PROFILE</div>
+      <h1>你的长期省钱账户，<br/><em>越用越懂你的出行偏好</em>。</h1>
+    </div>
+    <div class="mini-hero-side">
+      <span>PROFILE SCORE</span><b>92 / 100</b><span>FAVORITES</span><b>8 个收藏</b><span>SAVED</span><b>航线 / 目的地</b>
+    </div>
+  </section>
+
+  <section class="savings-board" data-reveal>
+    <div class="savings-total"><div class="l">累计帮你节省</div><div class="v"><span data-count="6240" data-fmt="comma">0</span><small>今年</small></div></div>
+    <div class="savings-meta"><div class="row-item"><span class="l">真特价命中</span><span class="v">18 次</span></div><div class="row-item"><span class="l">伪低价拦截</span><span class="v">7 次</span></div><div class="row-item"><span class="l">平均降幅</span><span class="v">24%</span></div></div>
+    <div class="savings-meta"><div class="row-item"><span class="l">常用出发</span><span class="v">上海 / 杭州</span></div><div class="row-item"><span class="l">预算区间</span><span class="v">¥1500-3000</span></div><div class="row-item"><span class="l">收藏中心</span><span class="v">8 个项目</span></div></div>
+  </section>
+
+  <section class="panel" data-reveal>
+    <div class="section-title"><span class="num">01 / PREFERENCES</span><h2>偏好画像</h2><span class="spacer"></span><span class="chip chip-ok">完整度 92%</span></div>
+    <div class="profile-cards">
+      <div class="profile-card"><div class="ico">出</div><h4>Home airports</h4><div class="val">上海、杭州</div></div>
+      <div class="profile-card"><div class="ico">航</div><h4>Airlines</h4><div class="val">国航、新航、国泰</div></div>
+      <div class="profile-card"><div class="ico">转</div><h4>Transfer</h4><div class="val">≤ 3 小时</div></div>
+      <div class="profile-card"><div class="ico">李</div><h4>Baggage</h4><div class="val">默认 1 件托运</div></div>
+      <div class="profile-card"><div class="ico">场</div><h4>Scenarios</h4><div class="val">周末游 / 亲子</div></div>
+      <div class="profile-card"><div class="ico">预</div><h4>Budget</h4><div class="val">¥1500 - ¥3000</div></div>
+      <div class="profile-card"><div class="ico">签</div><h4>Visa</h4><div class="val">免签优先</div></div>
+      <div class="profile-card"><div class="ico">线</div><h4>Favorites</h4><div class="val">8 个收藏</div></div>
+      <div class="profile-card"><div class="ico">策</div><h4>Saved routes</h4><div class="val">航线 + 目的地</div></div>
+    </div>
+  </section>
+
+  <section class="panel" data-reveal>
+    <div class="section-title"><span class="num">02 / FAVORITES</span><h2>收藏中心</h2><span class="spacer"></span><span class="chip chip-ember">8 个已收藏</span></div>
+    <div class="favorites-grid">
+      <article class="favorite-card hot">
+        <div class="favorite-type">航线</div>
+        <h3>上海 ⇌ 东京</h3>
+        <div class="favorite-price">¥1999 <small>含税起</small></div>
+        <div class="meta-row"><span>直飞</span><span>4天3晚</span><span>建议现在买</span></div>
+        <div class="flex mt-16"><button class="btn btn-primary btn-sm" onclick="location.href='deal-detail.html'">查看详情</button><button class="btn btn-ghost btn-sm" data-toast="已取消收藏：上海 ⇌ 东京">取消收藏</button></div>
+      </article>
+      <article class="favorite-card">
+        <div class="favorite-type">目的地</div>
+        <h3>济州岛 · JEJU</h3>
+        <div class="favorite-price">¥1190 <small>周末价</small></div>
+        <div class="meta-row"><span>3天2晚</span><span>直飞</span><span>落地签</span></div>
+        <div class="flex mt-16"><button class="btn btn-primary btn-sm">继续搜索</button><button class="btn btn-ghost btn-sm" data-toast="已取消收藏：济州岛">取消收藏</button></div>
+      </article>
+      <article class="favorite-card">
+        <div class="favorite-type">航线</div>
+        <h3>北京 ⇌ 东京</h3>
+        <div class="favorite-price">¥1999 <small>低价区间</small></div>
+        <div class="meta-row"><span>2小时前降价</span><span>推送中</span><span>直飞优先</span></div>
+        <div class="flex mt-16"><button class="btn btn-primary btn-sm">查看价格</button><button class="btn btn-ghost btn-sm" data-toast="已取消收藏：北京 ⇌ 东京">取消收藏</button></div>
+      </article>
+      <article class="favorite-card">
+        <div class="favorite-type">目的地</div>
+        <h3>岘港 · DA NANG</h3>
+        <div class="favorite-price">¥1580 <small>含税起</small></div>
+        <div class="meta-row"><span>海岛</span><span>免签</span><span>4天3晚</span></div>
+        <div class="flex mt-16"><button class="btn btn-primary btn-sm">继续搜索</button><button class="btn btn-ghost btn-sm" data-toast="已取消收藏：岘港">取消收藏</button></div>
+      </article>
+      <article class="favorite-card">
+        <div class="favorite-type">航线</div>
+        <h3>上海 ⇌ 新加坡</h3>
+        <div class="favorite-price">¥1980 <small>含 23kg</small></div>
+        <div class="meta-row"><span>直飞</span><span>价格稳定</span><span>含托运</span></div>
+        <div class="flex mt-16"><button class="btn btn-primary btn-sm">查看价格</button><button class="btn btn-ghost btn-sm" data-toast="已取消收藏：上海 ⇌ 新加坡">取消收藏</button></div>
+      </article>
+      <article class="favorite-card">
+        <div class="favorite-type">目的地</div>
+        <h3>清迈 · CHIANG MAI</h3>
+        <div class="favorite-price">¥1880 <small>5天4晚</small></div>
+        <div class="meta-row"><span>免签</span><span>中转</span><span>低于均价</span></div>
+        <div class="flex mt-16"><button class="btn btn-primary btn-sm">继续搜索</button><button class="btn btn-ghost btn-sm" data-toast="已取消收藏：清迈">取消收藏</button></div>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="container">
+    <div>© 2026 航旅智省 · SMART TRAVEL INTEL</div>
+    <div><a href="#">关于</a><a href="#">数据来源</a><a href="#">隐私</a><a href="#">联系</a></div>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
